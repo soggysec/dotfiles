@@ -52,12 +52,12 @@ p="${PWD#$HOME}";
 [ "$p" != "$PWD" ] && echo -n "~";
 i=0;
 
-until [ "$p" == "$d" ]; do
-    echo -n "${d:0:'"$STR_MAX_LENGTH"'}/";
+until [ "$p" == "$d2" ]; do
+    echo -n "${d2:0:'"$STR_MAX_LENGTH"'}/";
     p=${p#*/};
-    d=${p%%/*};
+    d2=${p%%/*};
 done;
-[ "$d" ] && echo -n "${d}";
+[ "$d2" ] && echo -n "${d2}";
 )'
 
 #build better detection for 256 versus regular here.
