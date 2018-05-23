@@ -216,6 +216,8 @@ if [ -f $HOME/git/dram/dram/dram.sh ]; then
     source $HOME/git/dram/dram/dram.sh
 fi
 
+NCPUS=$(grep -c ^process /proc/cpuinfo)
+export MAKEFLAGS="-j$NCPUS"
 
 export PYTHONDONTWRITEBYTECODE=1
 export PM_DEBUG="true"
