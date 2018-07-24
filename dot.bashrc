@@ -209,6 +209,10 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
     export WORKON_HOME=~/Envs
     mkdir -p $WORKON_HOME
+elif [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
+    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+    export WORKON_HOME=~/Envs
+    mkdir -p $WORKON_HOME
 fi
 
 if [ -f $HOME/git/dram/dram/dram.sh ]; then
@@ -221,3 +225,7 @@ export MAKEFLAGS="-j$NCPUS"
 
 export PYTHONDONTWRITEBYTECODE=1
 export PM_DEBUG="true"
+# BEGIN ANSIBLE MANAGED BLOCK - DRAM
+export DRAM_ROOT=/dram
+source /etc/dram/dram/dram.sh
+# END ANSIBLE MANAGED BLOCK - DRAM
