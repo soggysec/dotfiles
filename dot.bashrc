@@ -205,13 +205,17 @@ fi
 export PS1 EDITOR VISUAL PAGER LESS TERM PATH
 alias gitlog='git log --oneline --graph --pretty=format:"[%C(yellow)%h%C(reset) | %C(green)%cd %C(reset)| %C(blue)%cr%C(reset)] %C(cyan)%cn%C(reset), %C(cyan)%s" --date=short -20'
 
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-    export WORKON_HOME=~/Envs
+if [ -f $HOME/.local/bin/virtualenvwrapper.sh ]; then
+    source $HOME/.local/bin/virtualenvwrapper.sh
+    export WORKON_HOME=~/.virtualenvs
     mkdir -p $WORKON_HOME
 elif [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
     source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-    export WORKON_HOME=~/Envs
+    export WORKON_HOME=~/.virtualenvs
+    mkdir -p $WORKON_HOME
+elif [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+    export WORKON_HOME=~/.virtualenvs
     mkdir -p $WORKON_HOME
 fi
 
@@ -225,7 +229,3 @@ export MAKEFLAGS="-j$NCPUS"
 
 export PYTHONDONTWRITEBYTECODE=1
 export PM_DEBUG="true"
-# BEGIN ANSIBLE MANAGED BLOCK - DRAM
-export DRAM_ROOT=/dram
-source /etc/dram/dram/dram.sh
-# END ANSIBLE MANAGED BLOCK - DRAM
