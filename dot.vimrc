@@ -442,6 +442,5 @@ endfunction
 
 
 if has("autocmd")
-    autocmd FileType python setlocal tw=79
     autocmd FileType python setlocal makeprg=flake8\ %
 endif

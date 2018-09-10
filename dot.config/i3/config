@@ -11,6 +11,7 @@
 
 set_from_resource $user echo "$USER"
 set_from_resource $home echo "$HOME"
+default_orientation horizontal
 
 set $mod Mod4
 
