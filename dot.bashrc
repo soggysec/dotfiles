@@ -143,6 +143,11 @@ if [ "$TERM" != "dumb" ]; then
 		then
 			PATH=/usr/local/sbin:$PATH
 		fi
+        if [ -d $HOME/.local/bin ]
+		then
+			PATH=$HOME/.local/bin:$PATH
+		fi
+
 	    alias ls="ls -G"
 	else
 	    alias ls="ls --color=always"
